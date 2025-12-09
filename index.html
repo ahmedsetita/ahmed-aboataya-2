@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed Aboataya | Portfolio</title>
+    <meta
+      name="description"
+      content="Ahmed Aboataya - English Teacher & Communications Engineering Student"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="container nav__inner">
+        <div class="nav__logo">Ahmed <span>Aboataya</span></div>
+        <nav class="nav__links" id="nav-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#certificate">Certificate</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__gradient"></div>
+      <div class="hero__bg"></div>
+      <div class="container hero__content">
+        <div class="hero__text">
+          <p class="hero__eyebrow">Welcome, I am</p>
+          <h1>Ahmed Aboataya</h1>
+          <h2>English Teacher &amp; Communications Engineering Student</h2>
+          <p class="hero__subtitle">
+            I help students build strong English skills while applying the
+            mindset of an engineer — clear, structured, and result‑oriented
+            learning.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">Contact Me</a>
+            <a href="#services" class="btn btn--ghost">View Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container section__inner section__inner--two-col">
+        <div class="card glass about__text fade-in">
+          <h3 class="section__title">About Me</h3>
+          <p class="section__subtitle">
+            Blending language, technology, and communication.
+          </p>
+          <p>
+            I am Ahmed Aboataya, an English teacher with strong communication
+            skills, currently studying Communications Engineering. I combine
+            language proficiency with engineering problem‑solving to help
+            students learn effectively.
+          </p>
+          <div class="about__highlights">
+            <div class="about__item">
+              <i class="bi bi-translate"></i>
+              <div>
+                <h4>Fluent English Instruction</h4>
+                <p>Conversation, grammar, pronunciation, and exam preparation.</p>
+              </div>
+            </div>
+            <div class="about__item">
+              <i class="bi bi-diagram-3"></i>
+              <div>
+                <h4>Engineering Mindset</h4>
+                <p>Logical, structured lessons inspired by communications engineering.</p>
+              </div>
+            </div>
+            <div class="about__item">
+              <i class="bi bi-laptop"></i>
+              <div>
+                <h4>Online &amp; Flexible</h4>
+                <p>Remote sessions that adapt to your schedule and goals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about__visual fade-in">
+          <div class="about__photo glass">
+            <div class="about__photo-inner"></div>
+          </div>
+          <div class="about__stats">
+            <div class="stat glass">
+              <span class="stat__number">3+</span>
+              <span class="stat__label">Years Teaching</span>
+            </div>
+            <div class="stat glass">
+              <span class="stat__number">100+</span>
+              <span class="stat__label">Students Taught</span>
+            </div>
+            <div class="stat glass">
+              <span class="stat__number">A1–C1</span>
+              <span class="stat__label">Levels Covered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate Section - New section displaying official teaching certificate -->
+    <section id="certificate" class="section section--alt">
+      <div class="container">
+        <h3 class="section__title center">Official Certification</h3>
+        <p class="section__subtitle center">
+          Professional English teaching certification with comprehensive training.
+        </p>
+        <div class="certificate fade-in">
+          <div class="certificate__badge">
+            <i class="bi bi-patch-check-fill"></i>
+            <span>Certified English Teacher</span>
+          </div>
+          <div class="card glass certificate__image-wrapper">
+            <img
+              src="images/certificate.jpg"
+              alt="Ahmed Aboataya - Professional English Teaching Certificate"
+              class="certificate__image"
+            />
+          </div>
+          <p class="certificate__caption">
+            Official teaching certificate demonstrating comprehensive training in integrated English
+            program, including phonetics, American accent, translation, grammar, and advanced
+            communication skills.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section--alt">
+      <div class="container">
+        <h3 class="section__title center">Services</h3>
+        <p class="section__subtitle center">
+          Clear, focused support for both English learning and engineering projects.
+        </p>
+        <div class="grid grid--3">
+          <div class="card glass service fade-in">
+            <i class="bi bi-chat-dots service__icon"></i>
+            <h4>English Conversation</h4>
+            <p>
+              Build real‑life speaking confidence through guided conversations,
+              role‑plays, and everyday scenarios.
+            </p>
+            <ul class="service__list">
+              <li>Fluency &amp; pronunciation</li>
+              <li>Accent reduction tips</li>
+              <li>Practical speaking tasks</li>
+            </ul>
+          </div>
+          <div class="card glass service fade-in">
+            <i class="bi bi-book service__icon"></i>
+            <h4>Grammar &amp; Exam Prep</h4>
+            <p>
+              Structured lessons for school exams, university tests, and
+              international exams with clear strategies.
+            </p>
+            <ul class="service__list">
+              <li>Grammar foundations</li>
+              <li>Mock exams &amp; feedback</li>
+              <li>Writing &amp; reading skills</li>
+            </ul>
+          </div>
+          <div class="card glass service fade-in">
+            <i class="bi bi-cpu service__icon"></i>
+            <h4>Engineering Projects</h4>
+            <p>
+              Communications engineering student projects, simulations, and
+              technical presentations in English.
+            </p>
+            <ul class="service__list">
+              <li>Study project support</li>
+              <li>Presentation practice</li>
+              <li>Technical English</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h3 class="section__title center">Portfolio</h3>
+        <p class="section__subtitle center">
+          A space for study projects, teaching videos, certificates, and more.
+        </p>
+        <div class="grid grid--3">
+          <div class="card glass portfolio-card fade-in">
+            <div class="portfolio-card__thumb portfolio-card__thumb--teaching">
+              <i class="bi bi-chat-square-text"></i>
+            </div>
+            <div class="portfolio-card__body">
+              <h4>Teaching Demo Video</h4>
+              <p>
+                Placeholder for a short lesson or speaking demo you can upload later.
+              </p>
+            </div>
+          </div>
+          <div class="card glass portfolio-card fade-in">
+            <div class="portfolio-card__thumb portfolio-card__thumb--engineering">
+              <i class="bi bi-cpu"></i>
+            </div>
+            <div class="portfolio-card__body">
+              <h4>Communications Project</h4>
+              <p>
+                Add screenshots, reports, or diagrams from your engineering work.
+              </p>
+            </div>
+          </div>
+          <div class="card glass portfolio-card fade-in">
+            <div class="portfolio-card__thumb portfolio-card__thumb--certificates">
+              <i class="bi bi-patch-check"></i>
+            </div>
+            <div class="portfolio-card__body">
+              <h4>Certificates &amp; Achievements</h4>
+              <p>
+                Showcase language, teaching, or technical certificates here.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section--alt">
+      <div class="container section__inner section__inner--two-col contact__inner">
+        <div class="contact__info fade-in">
+          <h3 class="section__title">Contact</h3>
+          <p class="section__subtitle">
+            Let’s talk about your goals in English or your next engineering project.
+          </p>
+          <p>
+            Use the form or WhatsApp button to reach out. I’m happy to answer
+            questions and schedule a first session.
+          </p>
+          <div class="contact__details">
+            <div class="contact__detail">
+              <i class="bi bi-envelope"></i>
+              <span>Email: <a href="mailto:ahmedaboataya@gmail.com">ahmedaboataya@gmail.com</a></span>
+            </div>
+            <div class="contact__detail">
+              <i class="bi bi-whatsapp"></i>
+              <span>WhatsApp: <a href="https://wa.me/201091422013" target="_blank" rel="noopener">0109 142 2013</a></span>
+            </div>
+          </div>
+          <div class="contact__actions">
+            <a
+              href="https://wa.me/201091422013"
+              class="btn btn--whatsapp"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="bi bi-whatsapp"></i> WhatsApp Me
+            </a>
+          </div>
+        </div>
+
+        <div class="card glass contact__form-wrapper fade-in">
+          <form class="contact__form" id="contact-form">
+            <div class="form__group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form__group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Tell me how I can help..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              Send Message
+            </button>
+            <p class="form__note">
+              This is a demo form. You can later connect it to email or a backend
+              service of your choice.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>&copy; <span id="year"></span> Ahmed setita . All rights reserved.</p>
+        <div class="footer__links">
+          <a href="#hero">Back to top</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Fixed Social Links -->
+    <div class="social-fixed">
+      <a
+        href="https://wa.me/201091422013"
+        class="social-fixed__item social-fixed__item--whatsapp"
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp"
+      >
+        <i class="bi bi-whatsapp"></i>
+      </a>
+      <a
+        href="https://www.facebook.com/share/1DuYAw45Mi/"
+        class="social-fixed__item social-fixed__item--facebook"
+        target="_blank"
+        rel="noopener"
+        aria-label="Facebook"
+      >
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/ahmed__aboataya1?igsh=MWw0cHZtanRyOGU1bw=="
+        class="social-fixed__item social-fixed__item--instagram"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram"
+      >
+        <i class="bi bi-instagram"></i>
+      </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,873 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top left, #0b5ed7 0, #020b1a 55%, #010409 100%);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: min(1120px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.nav {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to right,
+    rgba(2, 8, 23, 0.85),
+    rgba(15, 23, 42, 0.85)
+  );
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.85rem;
+}
+
+.nav__logo {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 1.1rem;
+}
+
+.nav__logo span {
+  color: #60a5fa;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav__links a {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  transition: width 0.2s ease;
+}
+
+.nav__links a:hover {
+  color: #ffffff;
+}
+
+.nav__links a:hover::after {
+  width: 100%;
+}
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 0.3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav__toggle span {
+  width: 22px;
+  height: 2px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 4.5rem;
+  color: #f9fafb;
+  overflow: hidden;
+}
+
+/* Improved hero background positioning for better mobile visibility */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("WhatsApp Image 2025-11-26 at 19.35.42_a4489c0a.jpg");
+  background-size: cover;
+  background-position: center -480px;
+  filter: saturate(1.1);
+  z-index: -3;
+}
+
+/* Enhanced overlay for better text contrast on mobile */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.3) 0%,
+    rgba(15, 23, 42, 0.5) 40%,
+    rgba(15, 23, 42, 0.8) 100%
+  );
+  z-index: -2;
+}
+
+.hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.7), transparent),
+    radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.8), transparent);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+  z-index: -1;
+}
+
+.hero__content {
+  padding-block: 4rem 5rem;
+}
+
+.hero__text {
+  max-width: 640px;
+}
+
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: #bfdbfe;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 500;
+  color: #e5e7eb;
+  margin-bottom: 1.2rem;
+}
+
+.hero__subtitle {
+  max-width: 34rem;
+  color: #d1d5db;
+  font-weight: 300;
+  margin-bottom: 1.75rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.8rem 1.6rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #3b82f6, #22c1c3);
+  color: #0b1020;
+  box-shadow: 0 18px 45px rgba(59, 130, 246, 0.45);
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 55px rgba(56, 189, 248, 0.6);
+}
+
+.btn--ghost {
+  background: rgba(15, 23, 42, 0.4);
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+.btn--ghost:hover {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(191, 219, 254, 0.8);
+}
+
+.btn--whatsapp {
+  background: #22c55e;
+  color: #022c22;
+  gap: 0.4rem;
+}
+
+.btn--whatsapp:hover {
+  background: #16a34a;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Improved section spacing for better visual hierarchy */
+.section {
+  padding-block: 6rem;
+}
+
+.section--alt {
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), #020617);
+}
+
+/* Improved grid spacing and alignment */
+.section__inner {
+  display: grid;
+  align-items: start;
+  gap: 3.5rem;
+}
+
+.section__inner--two-col {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+}
+
+/* Enhanced section title for better hierarchy */
+.section__title {
+  font-size: 1.85rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Improved subtitle spacing */
+.section__subtitle {
+  color: #9ca3af;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.center {
+  text-align: center;
+}
+
+.glass {
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.85),
+    rgba(15, 23, 42, 0.55)
+  );
+  border-radius: 1.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(18px);
+}
+
+/* Enhanced card padding for better breathing room */
+.card {
+  padding: 2rem 2.2rem;
+}
+
+.about__highlights {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 1.75rem;
+}
+
+.about__item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.about__item i {
+  font-size: 1.6rem;
+  color: #60a5fa;
+}
+
+/* Improved about item heading */
+.about__item h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.about__item p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.about__visual {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.about__photo {
+  position: relative;
+  padding: 0.4rem;
+}
+
+.about__photo::before {
+  content: "";
+  position: absolute;
+  inset: 0.3rem;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #38bdf8, transparent 40%);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.about__photo-inner {
+  aspect-ratio: 3 / 4;
+  border-radius: 1.1rem;
+  background-image: url("WhatsApp Image 2025-11-26 at 19.35.42_a4489c0a.jpg");
+  background-size: cover;
+  background-position: center top;
+}
+
+/* Improved stats grid spacing */
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.stat {
+  padding: 0.9rem 1rem;
+  text-align: left;
+}
+
+.stat__number {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.stat__label {
+  display: block;
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+/* Improved grid spacing for cleaner layout */
+.grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.8rem;
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service__icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.9rem;
+  color: #60a5fa;
+}
+
+/* Enhanced service card typography */
+.service h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.service p {
+  color: #9ca3af;
+  font-size: 0.92rem;
+  margin-bottom: 0.8rem;
+}
+
+.service__list {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.86rem;
+  color: #e5e7eb;
+}
+
+.portfolio-card__thumb {
+  border-radius: 1.1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  min-height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.portfolio-card__thumb i {
+  font-size: 2.4rem;
+  color: #e5f2ff;
+  z-index: 1;
+}
+
+.portfolio-card__thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+  opacity: 0.75;
+}
+
+.portfolio-card__thumb--teaching {
+  background: radial-gradient(circle at top left, #38bdf8 0, #0f172a 55%);
+}
+
+.portfolio-card__thumb--teaching::after {
+  background: radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.8), transparent);
+}
+
+.portfolio-card__thumb--engineering {
+  background: radial-gradient(circle at top left, #4f46e5 0, #020617 60%);
+}
+
+.portfolio-card__thumb--engineering::after {
+  background: radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.8), transparent);
+}
+
+.portfolio-card__thumb--certificates {
+  background: radial-gradient(circle at top left, #22c55e 0, #022c22 60%);
+}
+
+.portfolio-card__thumb--certificates::after {
+  background: radial-gradient(circle at top right, rgba(45, 212, 191, 0.8), transparent);
+}
+
+/* Enhanced portfolio card typography */
+.portfolio-card__body h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.portfolio-card__body p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.contact__inner {
+  align-items: stretch;
+}
+
+.contact__details {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.3rem;
+}
+
+.contact__detail {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+.contact__detail i {
+  color: #60a5fa;
+  font-size: 1.1rem;
+}
+
+.contact__detail a {
+  color: #93c5fd;
+}
+
+.contact__actions {
+  margin-top: 1.5rem;
+}
+
+.contact__form-wrapper {
+  padding: 1.8rem;
+}
+
+.contact__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form__group {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form__group label {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+}
+
+.form__group input,
+.form__group textarea {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.65rem 0.85rem;
+  color: #f9fafb;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.form__group input::placeholder,
+.form__group textarea::placeholder {
+  color: #6b7280;
+}
+
+.form__group input:focus,
+.form__group textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.form__note {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-top: 0.2rem;
+}
+
+.footer {
+  border-top: 1px solid rgba(31, 41, 55, 0.9);
+  padding-block: 1.5rem;
+  background: #020617;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.footer__links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer__links a {
+  color: #9ca3af;
+}
+
+.social-fixed {
+  position: fixed;
+  right: 1.3rem;
+  bottom: 1.4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
+  z-index: 1200;
+}
+
+.social-fixed__item {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9fafb;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+  font-size: 1.1rem;
+}
+
+.social-fixed__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+}
+
+.social-fixed__item--whatsapp {
+  background: radial-gradient(circle at top left, #22c55e, #16a34a);
+}
+
+.social-fixed__item--facebook {
+  background: radial-gradient(circle at top left, #2563eb, #1d4ed8);
+}
+
+.social-fixed__item--instagram {
+  background: radial-gradient(circle at top left, #ec4899, #f97316);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Certificate Section - New section for displaying official certification */
+.certificate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* Certificate image wrapper - override card padding and background */
+.certificate__image-wrapper.card {
+  padding: 0 !important;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.85),
+    rgba(15, 23, 42, 0.55)
+  ) !important;
+}
+
+.certificate__image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.8);
+  padding: 0;
+}
+
+.certificate__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 1.4rem;
+  max-width: 100%;
+}
+
+.certificate__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(34, 193, 195, 0.2));
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: #bfdbfe;
+  margin-bottom: 1rem;
+}
+
+.certificate__badge i {
+  color: #60a5fa;
+  font-size: 1rem;
+}
+
+.certificate__caption {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* Tablet responsiveness improvements */
+@media (max-width: 960px) {
+  .section__inner--two-col {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+
+  .about__visual {
+    order: -1;
+  }
+
+  /* Improved stats on tablet */
+  .about__stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Improved hero background on tablet */
+  .hero__bg {
+    background-position: center -200px;
+  }
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 720px) {
+  .hero {
+    text-align: left;
+    min-height: 90vh;
+  }
+
+  .hero__text {
+    max-width: 100%;
+  }
+
+  /* Improved hero background positioning for mobile */
+  .hero__bg {
+    background-position: center top;
+    background-size: cover;
+  }
+
+  /* Enhanced overlay for better text readability on mobile */
+  .hero__overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0.4) 0%,
+      rgba(15, 23, 42, 0.6) 50%,
+      rgba(15, 23, 42, 0.85) 100%
+    );
+  }
+
+  .hero__actions {
+    justify-content: flex-start;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  /* Improved mobile nav menu styling */
+  .nav__links {
+    position: absolute;
+    inset-inline: 1rem;
+    top: calc(100% + 0.5rem);
+    margin-top: 0.5rem;
+    padding: 1.2rem 1.3rem;
+    border-radius: 1rem;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    gap: 1rem;
+    transform-origin: top;
+    transform: scaleY(0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .nav__links.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scaleY(1);
+  }
+
+  .grid--3 {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem 1.4rem;
+  }
+
+  .section {
+    padding-block: 3.5rem;
+  }
+
+  .section__inner {
+    gap: 2rem;
+  }
+
+  .section__subtitle {
+    margin-bottom: 1.5rem;
+  }
+
+  .social-fixed {
+    right: 0.9rem;
+    bottom: 1rem;
+    flex-direction: column;
+  }
+
+  /* Certificate section mobile adjustments */
+  .certificate {
+    padding: 0 0.5rem;
+  }
+
+  .certificate__image-wrapper {
+    margin-bottom: 1.2rem;
+  }
+
+  .certificate__caption {
+    font-size: 0.9rem;
+  }
+
+  /* Stats stack on mobile */
+  .about__stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card {
+    padding: 1.3rem 1.2rem;
+  }
+
+  .section {
+    padding-block: 3rem;
+  }
+}
+
+
